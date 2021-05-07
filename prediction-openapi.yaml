@@ -1,0 +1,45 @@
+
+swagger: "2.0"
+info:
+  title: "Prediction API"
+  description: "This is a sample prediciton API."
+  version: "1.0.0"
+host: "localhost:8080"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /prediction:
+    post:
+      operationId: "prediction"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "The document to perform a prediction on"
+        required: true
+        schema:
+          $ref: "#/definitions/ApiRequest"
+      responses:
+        "200":
+          description: "Successful prediction"
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        "405":
+          description: "Validation exception"
+definitions:
+  ApiRequest:
+    type: "object"
+    properties:
+      text:
+        type: "string"
+        description: "The text to perform the prediction on"
+  ApiResponse:
+    type: "object"
+    properties:
+      label:
+        type: "string"
+        description: "The prediction label"
