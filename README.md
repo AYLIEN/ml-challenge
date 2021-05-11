@@ -4,7 +4,7 @@ Hello, thank you for taking this challenge. The goal here is to get a sense of y
 
 If you have any questions then please get in touch sooner rather than later. We wish you all the best and good luck!
 
-**Note:** This repository is archived to avoid pull-requests, since pull-requests will be public. Please create your own GitHub repository instead and share the link with us.
+**Note:** Please do not create pull request to this PR. Create your own GitHub repository instead and share the link with us.
 
 ## Challenge
 
@@ -14,7 +14,7 @@ The language you should use is Python 3.8+, however the framework for ML or API 
 
 You are provided with the following:
 
-* A small text dataset, with training data and test data in the files `train.jsonl.gz` and `test.jsonl.gz` respectively.
+* A small text dataset, with training data and test data in the files [train.jsonl.gz](./train.jsonl.gz). and [test.jsonl.gz](./test.jsonl.gz) respectively.
     * The text is in English, and is from a collection of posts to newsgroups on various topics.
     * There are 6 labels: `"space", "electronics", "cryptography", "politics", "hockey", "baseball"`.
     * Each line contains a single example encoded as a JSON object: `{"text": "foo content", "label": "foo label"}`.
@@ -30,16 +30,10 @@ You are required to:
 3. Implement an API according to the open api specification.
 4. Create a web service (in Python 3) to serve the persisted model.
 5. Deploy the model locally.
-6. Implement changes in `docker-compose.yaml` to build the docker image with required ML libraries
-7. Provide some sample curl commands or a [Postman](https://www.postman.com/) collection
-8. *Stretch Goal 1* - Testing of the API before deployment
-9. *Stretch Goal 2* - Metrics API for inspecting current metrics of the service
+6. Create a container with your solution that can be run on Kubernetes.
+7. Provide some sample curl commands or a [Postman](https://www.postman.com/) collection.
+8. *Stretch Goal 1* - Suggest and/or implement improvements to the model.
+9. *Stretch Goal 2* - Testing of the API before deployment.
+10. *Stretch Goal 3* - Metrics API for inspecting current metrics of the service.
 
-For bonus points (not required):
-
-* Suggest and/or implement improvements to the model.
-
-Note:
-
-* There is no "strict" validation of your request messages, we mostly care about how you will integrate such transformation into your code.
-* We expect a web service that can run indefinitely, linearly scale and process as many requests as possible until stopped. The service should be able to accept as many requests as the model can process.
+**Note:** We expect a web service that can run indefinitely, linearly scale and process as many requests as possible until stopped. The service should be able to accept as many requests as the model can process.
